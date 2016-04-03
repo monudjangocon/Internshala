@@ -9,10 +9,10 @@
 
 {% block content %}
   	  <div class="setting">
-  	  	<h2 style="color:green">{{item.interncategory.name}} internship in {{item.location}} at {{item.interncategory.company_name}}</h2><hr>
-        <h3>{{item.interncategory.name}}</h3>
-        <h4>{{item.interncategory.company_name}}</h4>
-         <h5>Location(s):{{item.location}}</h5>
+  	  	<h3 style="color:green">{{item.interncategory.name}} internship in {{item.location}} at {{item.interncategory.company_name}}</h3><hr>
+        <h4>{{item.interncategory.name}}</h4>
+        <h4>{{item.interncategory.company_name}}</h5>
+         <h6>Location(s):{{item.location}}</h6>
    
  
       
@@ -29,7 +29,7 @@
          {{item.desciption}}
         
          <h4>About Internship:</h4>
-         {{item.intern_detail}}<br><img src="{{MEDIA_URL}}{{item.image.url}}" alt="image">
+         {{item.intern_detail}}
 
          <h4># of internships available : {{item.aval}}</h4><br>
          <h4>Who can apply:</h4>
@@ -38,7 +38,7 @@
           <p style="color:green;width:500px;">
 You can also share meaningful internship that you know and join the movement to build a Wikipedia of internships and win exciting prizes. Check out the Share an Internship Contest for more details.</p><br>
 
-             <a href="/intern_form/" class="btn btn-success btn-lg">Apply Now</a>
+             <a href="/intern_form/{{item.id}}" class="btn btn-success btn-lg">Apply Now</a>
 
       
 </div>

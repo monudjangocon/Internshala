@@ -45,13 +45,19 @@ class Internship(models.Model):
 
 	@models.permalink
 	def get_absolute_url(self):
-		return ('single_detail', (), { 'intern_id': self.id })
+		return ('single_detail', (), { 'intern_id': self.id})
 
+
+class InternshipFill(models.Model):
+	internshhip=models.ForeignKey(Internship,null=True)
+	starting_date=models.DateField()
+	expected_stipend=models.IntegerField()
+	months_commit=models.CharField(max_length=10)
+	assessment=models.TextField()
+
+	def __unicode__(self):
+		return self.assessment
 	
-
-
-
-
 
 
     	

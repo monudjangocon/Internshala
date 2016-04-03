@@ -6,7 +6,8 @@ from django.http import HttpResponseRedirect,HttpResponse
 from forms import LoginForm,RegistrationForm,InternshipForm
 from django.template import RequestContext
 from django.contrib import messages
-
+from forms import InternshipForm
+from models import InternshipFill
 
 def home(request):
 	return render_to_response('base.html',{})
@@ -80,7 +81,7 @@ def search(request):
         return HttpResponseRedirect('/')
 
 
-def InternForm(request):
+def InternForm(request,company_id):
     if request.method=="POST":
         form=InternshipForm(request.POST)
         if form.is_valid():
@@ -89,6 +90,7 @@ def InternForm(request):
 
     else:
         form=InternshipForm()
+        
         return render_to_response('intern_form.html',{'form':form},context_instance=RequestContext(request))
         
 
@@ -99,8 +101,10 @@ def intern_location(request,location):
     return render_to_response('intern_location.html',{'interncat':interncat},context_instance=RequestContext(request))
 
 
-def dashboard(request):
-    return render_to_response('dashboard.html',{},context_instance=RequestContext(request))
+def dashboard(request,company_id):
+    company=Internship.objects.get(id=company_id)
+    intern_fill=InternshipFill.objects.all()
+    return render_to_response('dashboard.html',{'dashboard':intern_fill,'item':company},context_instance=RequestContext(request))
     
 
 

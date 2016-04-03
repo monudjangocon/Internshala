@@ -13,8 +13,8 @@ urlpatterns = [
     url(r'^search/$', 'intern_1.views.search'),
     url(r'^login/$', 'intern_1.views.Login'),
      url(r'^register/$', 'intern_1.views.Register'),
-    url(r'^intern_form/$', 'intern_1.views.InternForm'), 
+    url(r'^intern_form/(?P<company_id>[\w-]+)/$', 'intern_1.views.InternForm'), 
     url(r'^logout/$', 'intern_1.views.Logout'),
-    url(r'^dashboard/$', 'intern_1.views.dashboard'),
+    url(r'^dashboard/(?P<company_id>[\w-]+)/$', 'intern_1.views.dashboard'),
     url(r'^internships/(?P<location>[\w-]+)/$', 'intern_1.views.intern_location',name="intern_location"),
 ]

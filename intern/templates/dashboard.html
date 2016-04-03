@@ -11,6 +11,38 @@
   <div class="container">                                                                                                               
   	<div class="dash">
    <h2> Your Applications</h2>
+
+
+   
+             <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th> Date</th>
+                        <th>Profile</th>
+                        <th>Company</th>
+                        <th>Application Status</th>
+                        <th>No.of Applicants</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                         <td>{{item.start_date}}</td>   
+                         <td>{{item.interncategory.name}}</td> 
+                         <td>{{item.interncategory.company_name}}</td>  
+                         <td>{{item.}}</td>  
+                         <td>{{item.internship.interncategory.company_name}}</td>  
+                         <td><a href="">View application</a></td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+   
+
+
     </div>
     </div>
 {% endblock %}

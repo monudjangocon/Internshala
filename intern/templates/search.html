@@ -1,9 +1,16 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/form.css' %}">
+
+{% endblock head %}
+
+ {% block title %}Searching internship {% endblock %}
 {% block content %}
 {% for item in internships %}
   	  <div class="container">
+        <div class="search">
         <h4 style="color:green">{{item.interncategory.name}}</h4>
         <h5><a href="">{{item.interncategory.company_name}}</a></h5>
          <h6>Location(s):{{item.location}}</h6>
@@ -21,6 +28,7 @@
           <a href="{{item.get_absolute_url}}" id="intern_view" class="btn btn-warning">View</a>
            </div>
           </div> 
+        </div>
       </div>
           <hr>
   	{% endfor %}

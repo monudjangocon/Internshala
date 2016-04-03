@@ -1,7 +1,8 @@
 from django import forms
 from django.core.exceptions import ValidationError
 from django.contrib.auth.models import User
-from models import Profile ,Internship
+from models import Profile ,Internship,InternshipFill
+from tinymce.widgets import TinyMCE
 
 
 class LoginForm(forms.Form):
@@ -70,35 +71,39 @@ class RegistrationForm(forms.ModelForm):
 
 
 class InternshipForm(forms.ModelForm):
+	assessment= forms.CharField(widget=TinyMCE(attrs={'cols': 80, 'rows': 10}))
+	'''def __init__(self, *args, **kwargs):
+		self.assessment= forms.CharField(widget=TinyMCE(attrs={'cols': 80, 'rows': 30}))
+		super(InternshipForm, self).__init__(*args, **kwargs)'''
 
 	MONTHS_CHOICE=(
-		 (1,1),(2,2),(3,3),(4,4),(5,5),(6,6),(7,7),(8,8),(9,9),(10,10),(11,11),(12,12)
-		)
+	(1,1),(2,2),(3,3),(4,4),(5,5),(6,6),(7,7),(8,8),(9,9),(10,10),(11,11),(12,12)
+	)
 
 	STIPEND_CHOICE=(
-		  ('No Expectation',"No Expectation. i am in it for learning"),
-		  ('INR 2-5K','2000-5000'),
-		  ('INR 5-10K','5000-10000'),
-		  ('INR 10K+','10000+'),
-		)
+	('No Expectation',"No Expectation. i am in it for learning"),
+	('INR 2-5K','2000-5000'),
+	('INR 5-10K','5000-10000'),
+	('INR 10K+','10000+'),
+	)
 
-	start_date=forms.CharField(label="Earliest you can start internship",widget=forms.TextInput(attrs={'class':'form-control'}),
+	'''starting_date=forms.CharField(label="Earliest you can start internship",widget=forms.TextInput(attrs={'class':'form-control'}),
 
                                                                            max_length=20)
 	months_commit=forms.CharField(label="Minimum number of months you can commit",widget=forms.TextInput(attrs={'class':'form-control'}),
 
                                                                            max_length=20)
 
-	stipend=forms.CharField(label="Expected stipend from internship ",widget=forms.TextInput(attrs={'class':'form-control'}),
+	expected_stipend=forms.CharField(label="Expected stipend from internship ",widget=forms.TextInput(attrs={'class':'form-control'}),
 
                                                                           max_length=30)
 
-	assessment=forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}),max_length=600)
+	assessment=forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}),max_length=600)'''
 
 
 	class Meta:
-		model=Internship
-		fields=['start_date','stipend','months_commit','assessment']
+		model=InternshipFill
+		fields=['starting_date','expected_stipend','months_commit','assessment']
 
 
 

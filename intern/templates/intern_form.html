@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 
 {% load staticfiles i18n %}
+{% load crispy_forms_tags %}
+
+{% load tinymce_tags %}
+
+{% block title %}SubmissionForm {% endblock %}
 
 {% block head %}
   <link href="{% static 'css/form.css' %}" rel="stylesheet">
@@ -13,7 +18,21 @@
 
    	  	<div class="form_detail">
    	  		<h3 >Logistics:</h3>
-   	  	{{form.as_p}}
+            <label id="date" for="start_date">Earliest You can start internship..</label>
+            <input type="text" id="start_date" class="form-control" placeholder="Select date"/>
+
+            <label id="month" for="months_commit">Mininum number of months you can commit.</label>
+            <input type="text" id="months_commit" class="form-control" placeholder="Select option"/>
+
+            <label id="stipend" for="expected_stipend">Expected stipend from internship..</label>
+            <input type="text" id="expected_stipend" class="form-control" placeholder="Select option"/>
+
+            <h3>Assessment Questions:</h3>
+
+            <p style="color:green" >Why should you be hired for this internship? (maximum 2048 characters)*</p>
+
+               {{form.assessment}}
+   	  	
    	  	<input type="submit" class="btn btn-warning btn-block" value="submit"/>
    	  	 </div>
 

@@ -7,13 +7,21 @@
 .setting{
 	margin:0 auto;
 	width:680px;
+	margin-top: 60px;
 }
 
 
 .intern_list{
 	
-	margin-left: 200px;
-}
+	margin:0 auto;
+	margin-top: 60px;
+	}
+
+	#android{
+		float:left;
+		width:300px;
+		height:600px;
+	}
 
 #intern_view:hover{
 	background:green;

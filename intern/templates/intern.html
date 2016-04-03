@@ -7,16 +7,18 @@
 {% endblock head %}
 
 {% block content %}
+  <div class="container">
    <div class="intern_list">
-  	{% for item in internship %}
-  	  
+     <h3 style="color:green;text-decoration:underline;">Internships</h3>
+  	  {% for item in internship %}
+  	   <div class="row">
         <h4 style="color:green">{{item.interncategory.name}}</h4>
         <h5><a href="">{{item.interncategory.company_name}}</a></h5>
          <h6>Location(s):{{item.location}}</h6>
    
  
       
-         <div class="row">
+         
          	<div class="col-md-2">Start Date <br><strong>{{item.start_date}}</strong> </div>
          	<div class="col-md-2">Duration<br><strong>{{item.duration}}</strong> </div>
          	<div class="col-md-2">Stipend<br> <strong>Rs.{{item.stipend}} /month</strong></div>
@@ -26,13 +28,11 @@
           <div class="col-md-2">
           <a href="{{item.get_absolute_url}}" id="intern_view" class="btn btn-warning">View</a>
            </div>
-          </div> 
+         </div>
           <hr>
   	{% endfor %}
 
 </div>
- 
-   
-
+</div>
 
 {% endblock %}
