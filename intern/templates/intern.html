@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block head %}
+   <link rel="stylesheet" href="{% static 'css/intern.css' %}">
+
+{% endblock head %}
+
+{% block content %}
+   <div class="intern_list">
+  	{% for item in internship %}
+  	  
+        <h4 style="color:green">{{item.interncategory.name}}</h4>
+        <h5><a href="">{{item.interncategory.company_name}}</a></h5>
+         <h6>Location(s):{{item.location}}</h6>
+   
+ 
+      
+         <div class="row">
+         	<div class="col-md-2">Start Date <br><strong>{{item.start_date}}</strong> </div>
+         	<div class="col-md-2">Duration<br><strong>{{item.duration}}</strong> </div>
+         	<div class="col-md-2">Stipend<br> <strong>Rs.{{item.stipend}} /month</strong></div>
+         	<div class="col-md-2">Posted On <br><strong>{{item.posted_on}}</strong> </div>
+         	<div class="col-md-2">Application Deadline <br><strong>{{item.end_date}} </strong></div>
+          
+          <div class="col-md-2">
+          <a href="{{item.get_absolute_url}}" id="intern_view" class="btn btn-warning">View</a>
+           </div>
+          </div> 
+          <hr>
+  	{% endfor %}
+
+</div>
+ 
+   
+
+
+{% endblock %}

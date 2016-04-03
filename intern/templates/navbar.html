@@ -1,0 +1,99 @@
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><strong style="color:orange">Internshala</strong></a>
+        </div>
+        <div class="navbar-collapse collapse">
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown dropdown-hover">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Internships <b class="caret hidden-xs hidden-sm"></b></a>
+                        <div class="dropdown-menu" id="internships-dropdown" class="hidden-xs">
+                            <div class="dropdown-inner">
+                                <div class="inner-dropdown">
+                                    <div class="menu-heading">
+                                        Location
+                                    </div>
+                                    <ul class="dropdown-menu-item">
+                                        <li>
+                                            <a href="/internships/bangalore">Internship in Bangalore</a>
+                                        </li>
+                                  
+                                        <li>
+                                            <a href="/internships/delhi">Internship in Delhi</a>
+                                        </li>
+                                      
+                                        <li>
+                                            <a href="/internships/hyderabad">Internship in Hyderabad</a>
+                                        </li>
+                                        
+                                        <li>
+                                            <a href="/internships/mumbai">Internship in Mumbai</a>
+                                        </li>
+                                  
+                                        <li>
+                                            <a href="/internships/chennai">Internship in Chennai</a>
+                                        </li>
+                                  
+                                        <li>
+                                            <a href="/internships/pune">Internship in Pune</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/internships/kolkata">Internship in Kolkata</a>
+                                        </li>
+                                       
+                                    </ul>
+                                </div>
+                            
+                            
+
+               
+                {% if user.is_authenticated %}
+                 <li><a href="/dashboard/">Dashboard</a></li>
+                <li><a href=""><span class="glyphicon glyphicon-user"></span>Welcome{{request.user.username}}</a></li>
+                 <li><a href="/logout/"><span class="glyphicon glyphicon-off"></span></a></li>
+                {% else %}
+                <li><a href="/login/" data-toggle="modal" data-target="#ritu">Login</a></li>
+                  
+                <li><a href="/register/">Register</a></li>
+                {% endif %}
+              </ul>
+
+
+              <div class="modal fade" id="ritu">
+                  <div class="modal-dialog">
+                       <div class="modal-content">
+                         <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                             <div id="user-menu-container">
+                               <div id="user-menu">
+                                <div class="row">
+                                  <div class="col-xs-6 user-menu-item active" id="student">
+                                    Students
+                                 </div>
+                                  <div class="col-xs-6 user-menu-item" id="employer">
+                                    Employers
+                                 </div>
+                                </div> 
+                           </div>
+                          </div>
+                       </div>
+                         <div class="modal-body">
+                
+                            <hr id="line-break">
+                               {% include 'login.html' %}
+                         </div>
+        </div>
+    </div>
+</div>
+
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>

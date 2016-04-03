@@ -1,0 +1,45 @@
+
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block head %}
+   <link rel="stylesheet" href="{% static 'css/intern.css' %}">
+
+{% endblock head %}
+
+{% block content %}
+  	  <div class="setting">
+  	  	<h2 style="color:green">{{item.interncategory.name}} internship in {{item.location}} at {{item.interncategory.company_name}}</h2><hr>
+        <h3>{{item.interncategory.name}}</h3>
+        <h4>{{item.interncategory.company_name}}</h4>
+         <h5>Location(s):{{item.location}}</h5>
+   
+ 
+      
+         <div class="row">
+         	<div class="col-md-2">Start Date <br><strong>{{item.start_date}}</strong> </div>
+         	<div class="col-md-2">Duration<br><strong>{{item.duration}}</strong> </div>
+        	<div class="col-md-3">Stipend<br><strong> Rs:{{item.stipend}} /month</strong></div>
+         	<div class="col-md-2">Posted On <br><strong>{{item.posted_on}} </strong></div>
+         	<div class="col-md-3">Application Deadline <br><strong>{{item.end_date}} </strong></div>
+        </div> 	
+         <hr>
+         
+         <h4>About{{item.interncategory.company_name}}</h4><strong><a href="http://www.{{item.interncategory.company_name}}.com">(http://www.{{item.interncategory.company_name}}.com)</a></strong><br>
+         {{item.desciption}}
+        
+         <h4>About Internship:</h4>
+         {{item.intern_detail}}<br><img src="{{MEDIA_URL}}{{item.image.url}}" alt="image">
+
+         <h4># of internships available : {{item.aval}}</h4><br>
+         <h4>Who can apply:</h4>
+          {{item.eligiblity}}<br><br>
+
+          <p style="color:green;width:500px;">
+You can also share meaningful internship that you know and join the movement to build a Wikipedia of internships and win exciting prizes. Check out the Share an Internship Contest for more details.</p><br>
+
+             <a href="/intern_form/" class="btn btn-success btn-lg">Apply Now</a>
+
+      
+</div>
+{% endblock %}

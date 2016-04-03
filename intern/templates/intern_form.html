@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load staticfiles i18n %}
+
+{% block head %}
+  <link href="{% static 'css/form.css' %}" rel="stylesheet">
+{% endblock head %}
+
+
+{% block content %}
+   <form method="post" action="">{% csrf_token %}
+   	  <div class="container">
+
+   	  	<div class="form_detail">
+   	  		<h3 >Logistics:</h3>
+   	  	{{form.as_p}}
+   	  	<input type="submit" class="btn btn-warning btn-block" value="submit"/>
+   	  	 </div>
+
+
+
+   	  </div>
+
+
+   	  
+   </form>
+
+
+
+{% endblock %}

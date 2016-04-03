@@ -1,0 +1,124 @@
+.intern{
+
+	margin-top:40px;
+	position:absolute;
+}
+
+.setting{
+	margin:0 auto;
+	width:680px;
+}
+
+
+.intern_list{
+	
+	margin-left: 200px;
+}
+
+#intern_view:hover{
+	background:green;
+}
+
+.base{
+	position:relative;
+	margin:0;
+	padding:0;
+
+}
+
+.base img{
+	width:100%;
+	height:400px;
+	margin:0;
+	padding:0;
+
+}
+
+.intern_city{
+	margin-top:60px;
+}
+
+.image li{
+    display:inline;
+
+}
+
+.image li img{
+	width:110px;
+    height:110px;
+    border-radius:8px;
+    margin:5px;
+    margin-left:20px;
+}
+
+
+
+#search_box{
+	top:200px;
+     margin-left: 350px;
+   
+    position:absolute;
+}
+
+.base h2{
+	  color:green;
+	  top:130px;
+     margin-left: 350px;
+    position:absolute;
+}
+
+
+.signup{
+	
+	width:100%;
+	height:800px;
+	
+	margin-top:20px;
+
+}
+
+#img_set{
+	width:100%;
+	height:900px;
+	
+}
+
+
+#register_box{
+	top:200px;
+     margin-left: 400px;
+      width:500px;
+      height:600px;
+    position:absolute;
+}
+
+
+.dropdown-inner{
+
+	width:300px;
+	height:250px;
+}
+
+.inner-dropdown{
+	margin:0 auto;
+	padding:10px;
+	
+}
+
+.menu-heading{
+	color:green;
+	
+}
+
+
+.dropdown-menu-item{
+	margin:0 auto;
+	list-style-type: none;
+	
+
+}
+
+.dropdown-menu-item li {
+	margin:10px;
+
+}

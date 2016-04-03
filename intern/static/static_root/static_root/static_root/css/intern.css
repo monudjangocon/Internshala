@@ -1,0 +1,75 @@
+.intern{
+
+	margin-top:40px;
+	position:absolute;
+}
+
+.setting{
+	margin:0 auto;
+	width:680px;
+}
+
+
+.intern_list{
+	
+	margin-left: 200px;
+}
+
+#intern_view:hover{
+	background:green;
+}
+
+.base{
+	position:relative;
+	margin:0;
+	padding:0;
+
+}
+
+.base img{
+	width:100%;
+	height:400px;
+	margin:0;
+	padding:0;
+
+}
+
+.intern_city{
+	margin-top:60px;
+}
+
+.image li{
+    display:inline;
+
+}
+
+.image li img{
+	width:110px;
+    height:110px;
+    border-radius:8px;
+    margin:5px;
+    margin-left:20px;
+}
+
+
+
+#search_box{
+	top:200px;
+     margin-left: 350px;
+   
+    position:absolute;
+}
+
+.base h2{
+	  color:purple;
+	  top:130px;
+     margin-left: 350px;
+    position:absolute;
+}
+
+
+.signup{
+	width:500px;
+	height:600px;
+	margin:auto;
+}
